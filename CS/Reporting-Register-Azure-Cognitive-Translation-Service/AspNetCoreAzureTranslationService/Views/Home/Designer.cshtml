@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="~/css/viewer.part.bundle.css" />
+<link rel="stylesheet" href="~/css/designer.part.bundle.css" />
+
+<script src="~/js/viewer.part.bundle.js"></script>    
+<script src="~/js/designer.part.bundle.js"></script>    
+<script>
+    function CustomizeLanguages(s, e) {
+        var supportedKeys = ["ar", "zh-Hans", "zh-Hant", "en", "fr", "de", "hi", "ja", "pt-BR", "pt-PT", "ru", "es"];
+        var availableCultures = supportedKeys.reduce(function(result, item) {
+            result[item] = DevExpress.Reporting.Metadata.availableCultures()[item] || item;
+            return result;
+        }, {})
+        e.SetAvailableCultures(availableCultures);
+    }
+    function BeforeDesignerRender(s, e) {
+        DevExpress.Reporting.Designer.Localization.registerTranslationService("AzureCognitiveService", {
+            onRequest: (texts, language) => {
+                var data = { 'Texts': texts.map(text => ({ 'Text': text })), 'Language': language };
+                return {
+                    type: "POST",
+                    url: '/Home/GetAzureTranslationService',
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    processData: true,
+                    data: JSON.stringify(data),
+                    error: function (xhr) {
+                        DevExpress.ui.notify(xhr.statusText, "error", 500);
+                    }
+                };
+            },
+            onResponse: (data) => {
+                if (data.error && data.error.message) {
+                    DevExpress.ui.notify(data.error.message, "warning", 500);
+                    return [];
+                }
+                return data.map(function (item) {
+                    return item.translations[0].text
+                });
+            }
+        });
+    }
+</script>
+@(Html.DevExpress().ReportDesigner("reportDesigner")
+    .Height("1000px")
+    .ClientSideEvents(x =>
+    {
+        x.CustomizeLocalization("CustomizeLanguages");
+        x.BeforeRender("BeforeDesignerRender");
+    })
+          .Bind("TestReport"))

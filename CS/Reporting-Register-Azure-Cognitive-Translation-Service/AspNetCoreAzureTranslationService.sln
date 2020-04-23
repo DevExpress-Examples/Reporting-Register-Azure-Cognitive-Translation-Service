@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29911.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreAzureTranslationService", "AspNetCoreAzureTranslationService\AspNetCoreAzureTranslationService.csproj", "{2CC30537-3D21-40D7-8C9A-B2A80511E4BA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2CC30537-3D21-40D7-8C9A-B2A80511E4BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CC30537-3D21-40D7-8C9A-B2A80511E4BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CC30537-3D21-40D7-8C9A-B2A80511E4BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CC30537-3D21-40D7-8C9A-B2A80511E4BA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6AE822D4-23B2-4554-9296-C73CB45C66C2}
+	EndGlobalSection
+EndGlobal
