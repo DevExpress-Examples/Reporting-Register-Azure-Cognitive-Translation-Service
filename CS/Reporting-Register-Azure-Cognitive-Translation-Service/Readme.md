@@ -2,7 +2,7 @@
 
 This example demonstrates how to create a custom localization service that allows users to automatically translate  reports in the End-User Report Designer.
 
-To localize a report, users enter translated texts in the End-User Report Designer's **Localization Editor**. When a custom service is registered, the Localization Editor displays a button next to the **Language** drop-down. A user can click the button to automatically translate all texts in the Localization Editor to the selected language.
+To localize a report, users enter translated text in the End-User Report Designer's **Localization Editor**. When a custom service is registered, the Localization Editor displays a button next to the **Language** drop-down. A user can click the button to automatically translate all text strings displayed within the Localization Editor to the selected language.
 
 ![](Images/AZURECreateTranlatorTextResource.png)
 
