@@ -33,8 +33,8 @@ You can implement a custom service as a frontend or backend custom solution and 
 
 2. End-User Report Designer initialization
 
-    2.1. Call the `DevExpress.Reporting.Designer.Localization.registerTranslateService` client-side method in the End-User Report Designer initialization and specify the translation service endpoint.
-    This example uses the Home/GetAzureServiceTranslate controller action as a URL to return the unique Azure Translator Text API endpoint key.
+    2.1. Call the `DevExpress.Reporting.Designer.Localization.registerTranslationService` client-side method in the End-User Report Designer initialization and specify the translation service endpoint.
+    This example uses the Home/GetAzureServiceTranslation controller action as a URL to return the unique Azure Translator Text API endpoint key.
     ```
     function BeforeDesignerRender(s, e) { 
             DevExpress.Reporting.Designer.Localization.registerTranslationService ("AzureCognitiveService", { 
