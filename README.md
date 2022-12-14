@@ -1,8 +1,3 @@
-<!-- default badges list -->
-![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/258184308/2020.1)
-[![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T882919)
-[![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
-<!-- default badges end -->
 # How to Use the Microsoft Azure Translator Text API in Report Localization
 
 This example demonstrates how to create a custom localization service that allows users to automatically translate  reports in the End-User Report Designer.
@@ -38,8 +33,8 @@ You can implement a custom service as a frontend or backend custom solution and 
 
 2. End-User Report Designer initialization
 
-    2.1. Call the `DevExpress.Reporting.Designer.Localization.registerTranslationService` client-side method in the End-User Report Designer initialization and specify the translation service endpoint.
-    This example uses the Home/GetAzureServiceTranslation controller action as a URL to return the unique Azure Translator Text API endpoint key.
+    2.1. Call the `DevExpress.Reporting.Designer.Localization.registerTranslateService` client-side method in the End-User Report Designer initialization and specify the translation service endpoint.
+    This example uses the Home/GetAzureServiceTranslate controller action as a URL to return the unique Azure Translator Text API endpoint key.
     ```
     function BeforeDesignerRender(s, e) { 
             DevExpress.Reporting.Designer.Localization.registerTranslationService ("AzureCognitiveService", { 
