@@ -6,6 +6,11 @@
 <!-- default badges end -->
 # Reporting for ASP.NET Core - How to Use the Microsoft Azure Translator Text API in Report Localization
 
+>[!TIP]
+>You can activate the built-in AI-powered Localization functionality in your ASP.NET Core and Blazor applications.
+>
+>Refer to the following help topic for more information: [Localize Reports in the Web Report Designer](https://docs.devexpress.com/XtraReports/405401/ai-powered-functionality/web-reporting/localization-in-web-report-designer?v=25.1).
+
 This example demonstrates how to create a custom localization service that allows users to automatically translate  reports in the End-User Report Designer.
 
 To localize a report, users enter translated text in the End-User Report Designer's **Localization Editor**. When a custom service is registered, the Localization Editor displays a button next to the **Language** drop-down. A user can click the button to automatically translate all text strings displayed within the Localization Editor to the selected language.
@@ -39,7 +44,7 @@ You can implement a custom service as a frontend or backend custom solution and 
 
 2. End-User Report Designer initialization
 
-    2.1. Call the `DevExpress.Reporting.Designer.Localization.registerTranslateService` client-side method in the End-User Report Designer initialization and specify the translation service endpoint.
+    2.1. Call the `DevExpress.Reporting.Designer.Localization.registerTranslationService` client-side method in the End-User Report Designer initialization and specify the translation service endpoint.
     This example uses the Home/GetAzureServiceTranslate controller action as a URL to return the unique Azure Translator Text API endpoint key.
     ```
     function BeforeDesignerRender(s, e) { 
